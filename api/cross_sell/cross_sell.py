@@ -78,7 +78,7 @@ class CrossSell:
         df9 = df9[cols_selected_full].copy()
         return df9
 
-    def get_prediction(trained_model, data_test):
+    def get_prediction(self, trained_model, data_test):
         # drop id
         data_testing = data_test.drop(['id'], axis=1).copy()
         # predict_proba:

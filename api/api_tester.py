@@ -11,7 +11,7 @@ import requests
 # Load model
 
 # %% codecell
-df = pd.read_csv('/home/marcos/Documentos/comunidade_DS/pa004_health_insurance_cross_sell/dta/test.csv')
+df = pd.read_csv('/home/marcos/Documentos/comunidade_DS/pa004_health_insurance_cross_sell/data/test.csv')
 
 
 # %% codecell
@@ -31,3 +31,5 @@ print('Status Code {}'.format(r.status_code))
 
 # %% codecell
 d1 = pd.DataFrame(r.json(), columns=r.json()[0].keys())
+d1 = d1[['id', 'score']]
+print(d1)
