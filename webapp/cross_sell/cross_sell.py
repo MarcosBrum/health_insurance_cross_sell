@@ -93,4 +93,4 @@ class CrossSell:
         testing_data = testing_data.sort_values('score', ascending=False)
         # reset index
         testing_data.reset_index(drop=True, inplace=True)
-        return testing_data
+        return testing_data.to_json(orient='records')
