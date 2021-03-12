@@ -1,1 +1,6 @@
 /ml_models_comp/giant
+
+## all csv files
+.csv
+
+/notebooks/.credentials.json
