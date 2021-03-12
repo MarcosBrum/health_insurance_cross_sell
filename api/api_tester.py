@@ -20,8 +20,8 @@ data = json.dumps(df.to_dict(orient='records'))
 
 # %% codecell
 # API Call
-url = 'http://0.0.0.0:5000/cross_sell/predict'
-# url = 'https://app_address.herokuapp.com/cross_sell/predict'
+#url = 'http://0.0.0.0:5000/cross_sell/predict'
+url = 'https://cross-sell-insurance.herokuapp.com/cross_sell/predict'
 header = {'Content-type': 'application/json'}
 data = data
 

@@ -27,7 +27,10 @@ class CrossSell:
         df1.columns = cols_lower
 
         # data types
+        df1['region_code'] = df1['region_code'].astype(float)
         df1['region_code'] = df1['region_code'].astype(int)
+        df1['annual_premium'] = df1['annual_premium'].astype(float)
+        df1['policy_sales_channel'] = df1['policy_sales_channel'].astype(float)
         df1['policy_sales_channel'] = df1['policy_sales_channel'].astype(int)
         return df1
 
@@ -77,7 +80,7 @@ class CrossSell:
         df9 = df9[cols_selected_full].copy()
         return df9
 
-    def get_prediction(trained_model, data_test):
+    def get_prediction(self, trained_model, data_test):
         # drop id
         data_testing = data_test.drop(['id'], axis=1).copy()
         # predict_proba:
@@ -90,7 +93,7 @@ class CrossSell:
         testing_data = data_test.copy()
         testing_data['score'] = yhat_proba_1d
         # sort
-        testing_data = testing_data.sort_values('score', ascending=False)
+        # testing_data = testing_data.sort_values('score', ascending=False)
         # reset index
         testing_data.reset_index(drop=True, inplace=True)
         return testing_data.to_json(orient='records')
