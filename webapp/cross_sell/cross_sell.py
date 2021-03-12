@@ -13,6 +13,7 @@ import pickle
 class CrossSell:
     def __init__(self):
         self.rs_age = pickle.load(open("encoders/age_new_scaler.pkl", "rb"))
+        self.gender_encoder = pickle.load(open("encoders/gender_encoder.pkl", "rb"))
         self.region_freq = pickle.load(open("encoders/region_freq_new_scaler.pkl", "rb"))
         self.channel_freq = pickle.load(open("encoders/channel_freq_new_scaler.pkl", "rb"))
         self.rs_premium = pickle.load(open("encoders/premium_new_scaler.pkl", "rb"))
@@ -27,6 +28,7 @@ class CrossSell:
         df1.columns = cols_lower
 
         # data types
+        df1['gender'] = df1['gender'].astype(str)
         df1['region_code'] = df1['region_code'].astype(float)
         df1['region_code'] = df1['region_code'].astype(int)
         df1['annual_premium'] = df1['annual_premium'].astype(float)
@@ -50,8 +52,11 @@ class CrossSell:
         df9 = df9.copy()
 
         # apply encoders and scalers
-        #gender: "One-hot" encoder
-        df9 = pd.get_dummies(df9, prefix='gender', columns=['gender'])
+
+        # gender: CountVectorizer
+        gender = self.gender_encoder.transform(df9['gender']).toarray()
+        df_gender = pd.DataFrame(data=gender, columns=['gender_' + name for name in self.gender_encoder.get_feature_names()])
+        df9 = df9.join(df_gender)
 
         # age - RobustScaler
         df9['age'] = self.rs_age.transform(df9[['age']].values)
