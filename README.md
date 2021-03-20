@@ -105,7 +105,7 @@ All of them were cross-validated.
 
 The models "Random Forest Classifier" and "XGBoost Classifier" presented a better generalizability performance than the other models, but due to storage issues, the "XGBoost Classifier" was chosen. The most adequate graphs that exhibit the performance of the model in this ranking problem are the cumulative gain curve, the lift curve ahd the roc curve. The three of them are displayed below.
 
-<img src="/images/model_performance.jpg" height="450" width="723">
+<img src="/images/model_performance.png" height="450" width="723">
 
 ## 8 Conclusions
 
