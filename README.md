@@ -1,6 +1,6 @@
 # Health_insurance_cross_sell
 
-Prediction of most probable customers to purchase a new vehicle insurance.
+Prediction of most probable customers to purchase a new _vehicle insurance_.
 
 <img src="/images/car_insurance.jpg" height="413" width="400">
 
