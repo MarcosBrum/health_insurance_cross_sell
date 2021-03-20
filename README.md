@@ -2,7 +2,7 @@
 
 Prediction of most probable customers to purchase a new vehicle insurance.
 
-<img src="/images/car_insurance.jpg" height="413" width="350">
+<img src="/images/car_insurance.jpg" height="413" width="400">
 
 
 ## 1 Business problem
