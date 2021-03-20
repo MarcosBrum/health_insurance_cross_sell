@@ -32,12 +32,14 @@ With this information at hand, the company needs to define a data-driven marketi
 
 4. How many calls does the sales team need to make in order to reach 80\% of the interested customers?
 
+In order to answer these questions, the machine learning model (more information below) must inform the probability that each client will purchase the vehicle insurance, and the database must be sorted by this information. Having the clients with higher probabilities on top, the questions above will be addressed.
+
 
 ## 2 Business Results
 
 The answers to the above questions are:
 
-1. "age", "policy sales channel", "previously insured", "annual premium", "vintage", "vehicle hist", "gender".
+1. The most important features are: "age", "policy sales channel", "previously insured", "annual premium", "vintage", "vehicle hist", "gender".
 	- The feature "vehicle hist" was created in the analysis process. It mixes the informations contained in the variables "vehicle damage" and "previously insured".
 2. If the sales team is able to make 20.00 calls, it will reach 68.56\% of the interested customers.
 3. If the sales team is now able to make 40.000 calls, it will reach 99.2\% of the interested customers.
@@ -65,9 +67,9 @@ __Step 03. Data Filtering__: Entries containing no information or containing inf
 
 __Step 04. Exploratory Data Analysis__: I performed univariate, bivariate and multivariate data analysis, obtaining statistical properties of each of them, correlations and testing hypothesis (the most important of them are detailed in the following section).
 
-__Step 05. Data Preparation__: Numerical data was rescaled, categorical data was transformed and cyclic data (such as months, weeks and days) was transformed using mathematical trigonometrical functions.
+__Step 05. Data Preparation__: The dataset had to be balanced because only 12\% of the clients responded that they were interested in purchasing the new insurance. The balancing consisted in undersampling the majority class and oversampling the minority class. This step is necessary both for feature selection and for the machine learning models. Regarding the data types, numerical data was rescaled and categorical data was encoded.
 
-__Step 06. Feature selection__: The statistically most relevant features were selected using the Boruta package.
+__Step 06. Feature selection__: The statistically most relevant features were selected using the Boruta package. Alternatively, I performed the feature selection using the tree classifiers Extra Trees and Balanced Random Forest, obtaining the "feature importances" from both of them. In the next steps, the machine learning models trained using the features selected by Boruta presented a better generalizability performance.
 
 __Step 07. Machine learning modelling__: Some machine learning models were trained. The one that presented best results after cross-validation went through a further stage of hyperparameter fine tunning to optimize the model's generalizability.
 
@@ -78,27 +80,32 @@ __Step 09. Deploy Model to Production__: The model is deployed on a cloud enviro
 
 ## 5 Top 3 Data insights
 
-1. Stores with larger assortment do not sell more.
-2. Stores with closer competitors do sell more.
-3. Stores sell less at school holidays (except during summer).
+1. Elderly clients are less prone to purchase the vehicle insurance.
+2. Female clients are less prone to purchase the vehicle insurance.
+3. Clients whose vehicle has already suffered damage are more prone to purchase the vehicle insurance.
 
 
-## 6 Machine Learning Model Applied
+## 6 Machine Learning Models Applied
 
 The following machine learning models were trained:
-* Linear Regression;
-* Regularized Linear Regression;
-* Random Forest Regressor;
-* XGBoost Regressor.
+* Balanced Random Forest Classifier;
+* Balanced Bagging Classifier;
+* Easy Ensemble Classifier;
+* Logistic Regression Classifier;
+* Nearest Neighbors Classifier;
+* Random Forest Classifier;
+* Random Under Sampler Classifier;
+* Stochastic Gradient Descent Classifier;
+* XGBoost Classifier.
 
-All of them were cross-validated and their performance was compared against a random model.
+All of them were cross-validated.
 
 
 ## 7 Machine Learning Model Performance
 
-The performance of every trained model, after cross-validation. The columns correspond to the metrics: Mean Absolute Error, Mean Absolute Percentage Error and Root Mean Squared Error.
+The models "Random Forest Classifier" and "XGBoost Classifier" presented a better generalizability performance than the other models, but due to storage issues, the "XGBoost Classifier" was chosen. The most adequate graphs that exhibit the performance of the model in this ranking problem are the cumulative gain curve, the lift curve ahd the roc curve. The three of them are displayed below.
 
-<!-- ![picture alt](https://github.com/MarcosBrum/Rossmann_sales_prediction/blob/master/cv_performance_to_readme.jpg) -->
+<img src="/images/model_performance.jpg" height="450" width="723">
 
 ## 8 Conclusions
 
