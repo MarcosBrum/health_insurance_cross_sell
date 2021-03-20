@@ -1,13 +1,49 @@
 # Health_insurance_cross_sell
 
-Prediction of most probable customers to purchase a new health insurance.
+Prediction of most probable customers to purchase a new vehicle insurance.
 
-## <img src="https://github.com/MarcosBrum/Rossmann_sales_prediction/blob/master/rossmann_drogeriemarkt.jpg" height="378" width="504">
+<!-- <img src="https://github.com/MarcosBrum/Rossmann_sales_prediction/blob/master/rossmann_drogeriemarkt.jpg" height="378" width="504"> -->
 
 
 ## 1 Business problem
 
-The stores of the Rossmann drugstore chain need to be restored and the CEO needs to decide how much is going to be dedicated to the restoration of each one. To support this decision, the Analytics team is asked to present a sales forecast for each store during a period of six weeks, alongside with the total income expected in the chain. This forecast also informs the CEO which store is able to account for its own restoration with the income within this period.
+A company that traditionally provides Health Insurance intends to offer its customers a new product, a Vehicle Insurance. In order to achieve this purpose efficiently, it gathered some information about their customers and asked if they would be interested in purchasing a new vehicle insurance. The features, together with their meanings, are:
+
+* __id__: Unique ID for the customer.
+* __Gender__: Gender of the customer.
+* __Age__: Age of the customer
+* __Driving License__: Whether the customer has a driving license, or not.
+* __Region Code__: Unique code for the location of the customer.
+* __Previously Insured__: Whether the customer already has a vehicle insurance, or not.
+* __Vehicle Age__: Age of the vehicle.
+* __Vehicle Damage__: Whether the vehicle has suffered damage in the past, or not.
+* __Annual Premium__: The amount paied by the customer annually.
+* __Policy Sales Channel__: Anonymized code for the channel of outreaching the customer.
+* __Vintage__: Amount of time (in days) since the customer is associated with the company.
+* __Response__: Whether the customer is interested in purchasing the vehicle insurance, or not.
+
+With this information at hand, the company needs to define a data-driven marketing strategy to sell their new product. It hired a Data Science consulting and asked them to clarify a few issues:
+
+1. Among all the features gathered, which show more evidence of intent of the customers to purchase the car insurance?
+
+2. If the sales team is able to make 20.000 calls, which fraction of the interested customers will be reached?
+
+3. If the sales team is now able to make 40.000 calls, which fraction of the interested customers will be reached?
+
+4. How many calls does the sales team need to make in order to reach 80\% of the interested customers?
+
+
+## 2 Business Results
+
+The answers to the above questions are:
+
+1. "age", "policy sales channel", "previously insured", "annual premium", "vintage", "vehicle hist", "gender".
+	- The feature "vehicle hist" was created in the analysis process. It mixes the informations contained in the variables "vehicle damage" and "previously insured".
+2. If the sales team is able to make 20.00 calls, it will reach 68.56\% of the interested customers.
+3. If the sales team is now able to make 40.000 calls, it will reach 99.2\% of the interested customers.
+4. In order to reach 80\% of the interested customers, the sales team must make 24.309 calls.
+
+__Quantitative gain__: At the mark of 80\% of interested customers reached, the sales team would have contacted about 32\% of all the clients in the database, with a lift in gain of 2.5. This means that the cost in making the calls will be diminished to 40\%.
 
 
 ## 2 Business Assumptions
@@ -62,7 +98,7 @@ All of them were cross-validated and their performance was compared against a ra
 
 The performance of every trained model, after cross-validation. The columns correspond to the metrics: Mean Absolute Error, Mean Absolute Percentage Error and Root Mean Squared Error.
 
-## ![picture alt](https://github.com/MarcosBrum/Rossmann_sales_prediction/blob/master/cv_performance_to_readme.jpg)
+<!-- ![picture alt](https://github.com/MarcosBrum/Rossmann_sales_prediction/blob/master/cv_performance_to_readme.jpg) -->
 
 ## 7 Business results
 
