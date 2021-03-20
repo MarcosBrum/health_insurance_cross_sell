@@ -4,7 +4,7 @@ Prediction of most probable customers to purchase a new vehicle insurance.
 
 <!-- <img src="https://gitlab.com/datascience-community/pa004_health_insurance_cross_sell/-/blob/pa004_marcos_brum/car_insurance.jpg" height="378" width="504"> -->
 
-<img src="https://gitlab.com/datascience-community/pa004_health_insurance_cross_sell/-/blob/pa004_marcos_brum/car_insurance.jpg" height="378" width="504">
+![ALT](/images/car_insurance.jpg)
 
 
 ## 1 Business problem
