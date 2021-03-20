@@ -103,9 +103,15 @@ All of them were cross-validated.
 
 ## 7 Machine Learning Model Performance
 
-The models "Random Forest Classifier" and "XGBoost Classifier" presented a better generalizability performance than the other models, but due to storage issues, the "XGBoost Classifier" was chosen. The most adequate graphs that exhibit the performance of the model in this ranking problem are the cumulative gain curve, the lift curve ahd the roc curve. The three of them are displayed below.
+The models "Random Forest Classifier" and "XGBoost Classifier" presented a better generalizability performance than the other models, but due to storage issues, the "XGBoost Classifier" was chosen. The most adequate graphs that exhibit the performance of the model in this ranking problem are the cumulative gain curve, the lift curve ahd the roc curve. These three curves are displayed below.
 
 <img src="/images/model_performance.png" height="450" width="723">
+
+The trained (cross-validated and fine tuned) model was also applied on a dataset of potential customers who did not participate in the initial poll. Therefore, this last dataset does not contain a "response" variable. In this case, the probability that each potential client will purchase the vehicle insurance is calculated, the dataset is sorted according to the probability and the sales team receives the sorted dataset to offer the vehicle insurance for the most prone individuales registered in the set.
+
+The model was deployed to production as an application on Heroku. This app was linked to a Google Sheet containing the dataset through a script in Google Scripts that posts requests sending the samples of the dataset, receives the predicted probability and writes this result in an additional column on the sheet. A sample of the resulting dataset with the probabilities (unsorted) is in the image below.
+
+<img src="/images/deploy_sheet.png" height="627" width="907">
 
 ## 8 Conclusions
 
