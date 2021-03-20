@@ -46,14 +46,14 @@ The answers to the above questions are:
 __Quantitative gain__: At the mark of 80\% of interested customers reached, the sales team would have contacted about 32\% of all the clients in the database, with a lift in gain of 2.5. This means that the cost in making the calls will be diminished to 40\%.
 
 
-## 2 Business Assumptions
+## 3 Business Assumptions
 
-* All stores contain a basic sortment, but some of them contain (different kinds of) extra sortments.
-* The store's opening on weekends and holidays vary from place to place.
-* The stores participate in seasonal promotions. In some of these cases, the promotion is continued for a longer time.
+* The dataset presents customers from Pakistan. The curency presented by the source is Rs, Pakistani rupee.
+* Every client in the database is above minimum driving age.
+* For all customers, the vintage is less than one year.
 
 
-## 3 Solution Strategy
+## 4 Solution Strategy
 
 The strategy adopted was the following:
 
@@ -76,14 +76,14 @@ __Step 08. Model-to-business__: The models performance is converted into busines
 __Step 09. Deploy Model to Production__: The model is deployed on a cloud environment to make possible that other stakeholders and services access its results.
 
 
-## 4 Top 3 Data insights
+## 5 Top 3 Data insights
 
 1. Stores with larger assortment do not sell more.
 2. Stores with closer competitors do sell more.
 3. Stores sell less at school holidays (except during summer).
 
 
-## 5 Machine Learning Model Applied
+## 6 Machine Learning Model Applied
 
 The following machine learning models were trained:
 * Linear Regression;
@@ -94,15 +94,11 @@ The following machine learning models were trained:
 All of them were cross-validated and their performance was compared against a random model.
 
 
-## 6 Machine Learning Model Performance
+## 7 Machine Learning Model Performance
 
 The performance of every trained model, after cross-validation. The columns correspond to the metrics: Mean Absolute Error, Mean Absolute Percentage Error and Root Mean Squared Error.
 
 <!-- ![picture alt](https://github.com/MarcosBrum/Rossmann_sales_prediction/blob/master/cv_performance_to_readme.jpg) -->
-
-## 7 Business results
-
-The gross expected income of the majority of stores is in the range between R$5000.00 and R$22000.00. The chain is expected to obtain R$289,822,112.00, with best and worst case scenarios of R$290,808,412.17 and R$288,835,860.27, respectively. These scenarios are predicted using the mean absolute percentage error. The same statistical error is applied to each store, individually.
 
 ## 8 Conclusions
 
