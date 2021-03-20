@@ -2,7 +2,9 @@
 
 Prediction of most probable customers to purchase a new vehicle insurance.
 
-<!-- <img src="https://github.com/MarcosBrum/Rossmann_sales_prediction/blob/master/rossmann_drogeriemarkt.jpg" height="378" width="504"> -->
+<!-- <img src="https://gitlab.com/datascience-community/pa004_health_insurance_cross_sell/-/blob/pa004_marcos_brum/car_insurance.jpg" height="378" width="504"> -->
+
+<img src="https://gitlab.com/datascience-community/pa004_health_insurance_cross_sell/-/blob/pa004_marcos_brum/car_insurance.jpg" height="378" width="504">
 
 
 ## 1 Business problem
