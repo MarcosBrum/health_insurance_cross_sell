@@ -128,3 +128,9 @@ The identification of the potential clients that are most prone to purchase the 
 ## 10 Next steps and improvements
 
 One of the biggest challenges of this project was due to the imbalance of the dataset. I would test more deeply the tools to handle this property, both at feature selection and at machine learning model training. Besides, some of the hypothesis made in the feature engineering step would be reviewed in a following CRISP cycle.
+
+
+## 11 Acknowledgments
+
+This project was solved in collaboration with the members of [Comunidade Data Science](https://sejaumdatascientist.com/). The dataset used is publicly avaliable at [kaggle](https://www.kaggle.com/anmolkumar/health-insurance-cross-sell-prediction).
+
